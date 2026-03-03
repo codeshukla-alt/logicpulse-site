@@ -45,8 +45,7 @@ body{
   85%{opacity:0.7}
   100%{opacity:0;transform:translateY(-100vh)}
 }
-.logo-mark img.error{display:none}
-.logo-mark.fallback{font-size:36px;line-height:80px}
+.logo-mark canvas{display:block}
 
 .container{max-width:740px;margin:0 auto;padding:48px 24px 80px;position:relative;z-index:1}
 
@@ -60,7 +59,7 @@ body{
   box-shadow:0 0 40px rgba(168,85,247,0.25),0 0 80px rgba(124,58,237,0.1);
   animation:breathe 3s ease-in-out infinite;
 }
-.logo-mark img{width:100%;height:100%;object-fit:cover;border-radius:22px}
+.logo-mark canvas{border-radius:22px}
 @keyframes breathe{
   0%,100%{transform:scale(1);box-shadow:0 0 40px rgba(168,85,247,0.25)}
   50%{transform:scale(1.05);box-shadow:0 0 60px rgba(168,85,247,0.35)}
@@ -172,7 +171,7 @@ a:hover{opacity:0.8;text-decoration:underline}
 <div class="container">
 
   <div class="header">
-    <div class="logo-mark" id="logoWrap"><img src="icon.png" alt="LogicPulse" width="80" height="80" id="logoImg" onerror="this.classList.add('error');document.getElementById('logoWrap').classList.add('fallback');document.getElementById('logoWrap').innerHTML='&#9889;'"></div>
+    <div class="logo-mark" id="logoWrap"><canvas id="logoCanvas" width="160" height="160" style="width:80px;height:80px;border-radius:22px"></canvas></div>
     <div class="app-name">LogicPulse</div>
     <h1>Privacy Policy</h1>
     <p class="effective">Effective Date: March 3, 2026</p>
@@ -298,17 +297,28 @@ a:hover{opacity:0.8;text-decoration:underline}
 <button class="back-top" id="backTop" aria-label="Back to top">↑</button>
 
 <script>
-// Dynamic favicon from icon.png (resized to 32x32 via canvas)
+// Load app icon once, render to logo canvas + favicon
 (function(){
   var img=new Image();
-  img.crossOrigin='anonymous';
   img.onload=function(){
-    var c=document.createElement('canvas');
-    c.width=32;c.height=32;
-    var ctx=c.getContext('2d');
-    ctx.drawImage(img,0,0,32,32);
+    // Draw logo (160x160 canvas displayed at 80x80 for retina)
+    var logo=document.getElementById('logoCanvas');
+    if(logo){
+      var lctx=logo.getContext('2d');
+      lctx.clearRect(0,0,160,160);
+      lctx.drawImage(img,0,0,160,160);
+    }
+    // Generate 32x32 favicon
+    var fc=document.createElement('canvas');
+    fc.width=32;fc.height=32;
+    var fctx=fc.getContext('2d');
+    fctx.drawImage(img,0,0,32,32);
     var link=document.querySelector("link[rel='icon']");
-    if(link){link.href=c.toDataURL('image/png');}
+    if(link){link.href=fc.toDataURL('image/png');}
+  };
+  img.onerror=function(){
+    var w=document.getElementById('logoWrap');
+    if(w){w.style.fontSize='36px';w.style.lineHeight='80px';w.innerHTML='⚡';}
   };
   img.src='icon.png';
 })();
