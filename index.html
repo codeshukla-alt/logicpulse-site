@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Privacy Policy | LogicPulse</title>
 <meta name="description" content="Privacy Policy for LogicPulse - AI-powered STEM tutor for students and professionals.">
-<link rel="icon" type="image/png" href="icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -40,10 +41,12 @@ body{
 .particle{position:absolute;width:2px;height:2px;border-radius:50%;opacity:0;animation:particleDrift linear infinite}
 @keyframes particleDrift{
   0%{opacity:0;transform:translateY(0)}
-  10%{opacity:0.6}
-  90%{opacity:0.6}
+  8%{opacity:0.7}
+  85%{opacity:0.7}
   100%{opacity:0;transform:translateY(-100vh)}
 }
+.logo-mark img.error{display:none}
+.logo-mark.fallback{font-size:36px;line-height:80px}
 
 .container{max-width:740px;margin:0 auto;padding:48px 24px 80px;position:relative;z-index:1}
 
@@ -169,7 +172,7 @@ a:hover{opacity:0.8;text-decoration:underline}
 <div class="container">
 
   <div class="header">
-    <div class="logo-mark"><img src="icon.png" alt="LogicPulse"></div>
+    <div class="logo-mark" id="logoWrap"><img src="icon.png" alt="LogicPulse" width="80" height="80" id="logoImg" onerror="this.classList.add('error');document.getElementById('logoWrap').classList.add('fallback');document.getElementById('logoWrap').innerHTML='&#9889;'"></div>
     <div class="app-name">LogicPulse</div>
     <h1>Privacy Policy</h1>
     <p class="effective">Effective Date: March 3, 2026</p>
@@ -295,40 +298,57 @@ a:hover{opacity:0.8;text-decoration:underline}
 <button class="back-top" id="backTop" aria-label="Back to top">↑</button>
 
 <script>
-// Particles (mix of purple and cyan)
+// Dynamic favicon from icon.png (resized to 32x32 via canvas)
 (function(){
-  const c=document.getElementById('particles');
-  const colors=['#A855F7','#C084FC','#7C3AED','#40E0FF'];
-  for(let i=0;i<25;i++){
-    const p=document.createElement('div');
+  var img=new Image();
+  img.crossOrigin='anonymous';
+  img.onload=function(){
+    var c=document.createElement('canvas');
+    c.width=32;c.height=32;
+    var ctx=c.getContext('2d');
+    ctx.drawImage(img,0,0,32,32);
+    var link=document.querySelector("link[rel='icon']");
+    if(link){link.href=c.toDataURL('image/png');}
+  };
+  img.src='icon.png';
+})();
+
+// Particles (heavy purple + cyan flow)
+(function(){
+  var c=document.getElementById('particles');
+  var colors=['#A855F7','#C084FC','#7C3AED','#9333EA','#40E0FF','#A78BFA'];
+  for(var i=0;i<70;i++){
+    var p=document.createElement('div');
     p.className='particle';
     p.style.left=Math.random()*100+'%';
     p.style.top=Math.random()*100+100+'%';
-    p.style.animationDuration=(15+Math.random()*25)+'s';
-    p.style.animationDelay=Math.random()*20+'s';
-    p.style.width=p.style.height=(1+Math.random()*2)+'px';
+    p.style.animationDuration=(12+Math.random()*28)+'s';
+    p.style.animationDelay=Math.random()*25+'s';
+    var size=1+Math.random()*2.5;
+    p.style.width=size+'px';
+    p.style.height=size+'px';
     p.style.background=colors[Math.floor(Math.random()*colors.length)];
     c.appendChild(p);
   }
 })();
 
 // Scroll reveal
-const sections=document.querySelectorAll('[data-section]');
-const observer=new IntersectionObserver((entries)=>{
-  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')});
+var sections=document.querySelectorAll('[data-section]');
+var observer=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible')});
 },{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
-sections.forEach(s=>observer.observe(s));
+sections.forEach(function(s){observer.observe(s)});
 
 // Progress bar
-window.addEventListener('scroll',()=>{
-  const h=document.documentElement;
-  const pct=(h.scrollTop/(h.scrollHeight-h.clientHeight))*100;
+window.addEventListener('scroll',function(){
+  var h=document.documentElement;
+  var pct=(h.scrollTop/(h.scrollHeight-h.clientHeight))*100;
   document.getElementById('progressBar').style.width=pct+'%';
   document.getElementById('backTop').classList.toggle('show',h.scrollTop>400);
 });
 
 // Back to top
-document.getElementById('backTop').addEventListener('click',()=>{
+document.getElementById('backTop').addEventListener('click',function(){
   window.scrollTo({top:0,behavior:'smooth'});
 });
 </script>
