@@ -80,10 +80,9 @@ h1{font-size:36px;font-weight:800;color:#fff;letter-spacing:-0.5px;margin-bottom
   border-radius:16px;padding:28px 28px;margin-bottom:20px;
   backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
   opacity:0;transform:translateY(20px);
-  transition:opacity 0.6s ease,transform 0.6s ease,border-color 0.3s;
+  transition:opacity 0.6s ease,transform 0.6s ease,border-color 0.3s,box-shadow 0.3s;
 }
 .section.visible{opacity:1;transform:translateY(0)}
-.section:hover{border-color:rgba(168,85,247,0.18)}
 .section-num{
   display:inline-block;font-size:11px;font-weight:700;letter-spacing:1.5px;
   color:var(--accent-light);background:rgba(168,85,247,0.1);
@@ -148,15 +147,55 @@ a:hover{opacity:0.8;text-decoration:underline}
   .bg-glow .orb{filter:blur(80px);opacity:0.08}
 }
 
+/* Sticky nav */
+.sticky-nav{
+  position:fixed;top:-60px;left:0;width:100%;z-index:150;
+  background:rgba(11,13,16,0.85);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);
+  transition:top 0.35s cubic-bezier(0.4,0,0.2,1);
+}
+.sticky-nav.show{top:0}
+.sticky-nav-inner{
+  max-width:740px;margin:0 auto;padding:12px 24px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.sticky-nav-brand{
+  font-size:13px;font-weight:700;letter-spacing:2px;
+  background:linear-gradient(90deg,var(--accent-light),var(--cyan));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.sticky-nav-links{display:flex;gap:16px}
+.sticky-nav-links a{
+  color:var(--text-muted);font-size:12px;font-weight:500;letter-spacing:0.5px;
+  text-decoration:none;transition:color 0.2s;
+}
+.sticky-nav-links a:hover{color:var(--accent-light);text-decoration:none}
+
+/* Section hover lift */
+.section:hover{border-color:rgba(168,85,247,0.22);transform:translateY(-2px);box-shadow:0 8px 30px rgba(168,85,247,0.06)}
+
 /* Scroll progress */
 .progress-bar{
   position:fixed;top:0;left:0;height:2px;z-index:200;
   background:linear-gradient(90deg,var(--accent),var(--cyan));
   width:0%;transition:width 0.1s linear;
 }
+.sticky-nav.show~.progress-bar,.sticky-nav.show+.progress-bar{top:0}
 </style>
 </head>
 <body>
+
+<nav class="sticky-nav" id="stickyNav">
+  <div class="sticky-nav-inner">
+    <a href="/" class="sticky-nav-brand" style="text-decoration:none">LOGICPULSE</a>
+    <div class="sticky-nav-links">
+      <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms</a>
+      <a href="https://play.google.com/store/apps/details?id=com.logicpulse.app">Play Store</a>
+      <a href="mailto:aditya@logicpulse.live">Contact</a>
+    </div>
+  </div>
+</nav>
 
 <div class="progress-bar" id="progressBar"></div>
 
@@ -287,6 +326,8 @@ a:hover{opacity:0.8;text-decoration:underline}
     <div class="footer-logo">LOGICPULSE</div>
     <p class="footer-copy">&copy; 2026 LogicPulse. All rights reserved.</p>
     <div class="footer-links">
+      <a href="/privacy">Privacy Policy</a>
+      <a href="/terms">Terms of Service</a>
       <a href="https://play.google.com/store/apps/details?id=com.logicpulse.app">Play Store</a>
       <a href="mailto:aditya@logicpulse.live">Contact</a>
     </div>
@@ -349,12 +390,13 @@ var observer=new IntersectionObserver(function(entries){
 },{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
 sections.forEach(function(s){observer.observe(s)});
 
-// Progress bar
+// Progress bar + sticky nav
 window.addEventListener('scroll',function(){
   var h=document.documentElement;
   var pct=(h.scrollTop/(h.scrollHeight-h.clientHeight))*100;
   document.getElementById('progressBar').style.width=pct+'%';
   document.getElementById('backTop').classList.toggle('show',h.scrollTop>400);
+  document.getElementById('stickyNav').classList.toggle('show',h.scrollTop>300);
 });
 
 // Back to top

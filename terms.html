@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Service | LogicPulse</title>
+<meta name="description" content="Terms of Service for LogicPulse - AI-powered STEM tutor for students and professionals.">
+<link rel="icon" type="image/png" sizes="32x32" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0B0D10;--bg-card:rgba(255,255,255,0.03);--border:rgba(255,255,255,0.06);
+  --text:#E0E4EC;--text-sec:#9CA3AF;--text-muted:#6B7280;
+  --accent:#A855F7;--accent-light:#C084FC;--accent-dark:#7C3AED;
+  --cyan:#40E0FF;
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',system-ui,-apple-system,sans-serif;
+  background:var(--bg);color:var(--text);line-height:1.7;
+  min-height:100vh;overflow-x:hidden;
+}
+.bg-glow{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;overflow:hidden}
+.bg-glow .orb{position:absolute;border-radius:50%;filter:blur(120px);opacity:0.12;animation:orbFloat 20s ease-in-out infinite}
+.bg-glow .orb-1{width:500px;height:500px;background:var(--accent);top:-10%;left:-10%;animation-delay:0s}
+.bg-glow .orb-2{width:400px;height:400px;background:var(--cyan);bottom:-5%;right:-10%;animation-delay:-7s}
+.bg-glow .orb-3{width:300px;height:300px;background:var(--accent-dark);top:40%;right:20%;animation-delay:-14s}
+@keyframes orbFloat{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(30px,-40px) scale(1.05)}66%{transform:translate(-20px,30px) scale(0.95)}}
+.particles{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0}
+.particle{position:absolute;width:2px;height:2px;border-radius:50%;opacity:0;animation:particleDrift linear infinite}
+@keyframes particleDrift{0%{opacity:0;transform:translateY(0)}8%{opacity:0.7}85%{opacity:0.7}100%{opacity:0;transform:translateY(-100vh)}}
+.container{max-width:740px;margin:0 auto;padding:48px 24px 80px;position:relative;z-index:1}
+.header{text-align:center;margin-bottom:48px;animation:fadeSlideUp 0.8s ease-out}
+.logo-mark{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:80px;height:80px;border-radius:22px;
+  background:linear-gradient(135deg,rgba(168,85,247,0.15),rgba(124,58,237,0.1));
+  margin-bottom:20px;overflow:hidden;
+  box-shadow:0 0 40px rgba(168,85,247,0.25),0 0 80px rgba(124,58,237,0.1);
+  animation:breathe 3s ease-in-out infinite;
+}
+.logo-mark canvas{border-radius:22px;display:block}
+@keyframes breathe{0%,100%{transform:scale(1);box-shadow:0 0 40px rgba(168,85,247,0.25)}50%{transform:scale(1.05);box-shadow:0 0 60px rgba(168,85,247,0.35)}}
+.app-name{font-size:13px;font-weight:700;letter-spacing:3px;text-transform:uppercase;background:linear-gradient(90deg,var(--accent-light),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:8px}
+h1{font-size:36px;font-weight:800;color:#fff;letter-spacing:-0.5px;margin-bottom:8px}
+.effective{color:var(--text-muted);font-size:13px}
+.intro{color:var(--text-sec);font-size:15px;margin-top:16px;max-width:560px;margin-left:auto;margin-right:auto}
+.section{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:28px;margin-bottom:20px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease,border-color 0.3s,box-shadow 0.3s}
+.section.visible{opacity:1;transform:translateY(0)}
+.section:hover{border-color:rgba(168,85,247,0.22);transform:translateY(-2px);box-shadow:0 8px 30px rgba(168,85,247,0.06)}
+.section-num{display:inline-block;font-size:11px;font-weight:700;letter-spacing:1.5px;color:var(--accent-light);background:rgba(168,85,247,0.1);padding:4px 10px;border-radius:20px;margin-bottom:12px}
+h2{font-size:19px;font-weight:700;color:#fff;margin-bottom:12px}
+p{color:var(--text-sec);font-size:15px;margin-bottom:8px}
+ul{padding-left:20px;margin:8px 0}
+li{color:var(--text-sec);font-size:15px;margin-bottom:8px}
+li strong{color:var(--text)}
+.info-box{background:rgba(168,85,247,0.05);border:1px solid rgba(168,85,247,0.15);border-radius:12px;padding:16px 20px;margin:16px 0}
+.info-box strong{color:var(--accent-light);font-size:14px}
+.info-box p{margin-top:8px;margin-bottom:0;font-size:14px}
+.highlight{color:#fff;font-weight:600}
+a{color:var(--accent-light);text-decoration:none;transition:opacity 0.2s}
+a:hover{opacity:0.8;text-decoration:underline}
+.footer{text-align:center;padding-top:32px;margin-top:48px;border-top:1px solid var(--border)}
+.footer-logo{font-size:13px;font-weight:700;letter-spacing:2px;background:linear-gradient(90deg,var(--accent-light),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:8px}
+.footer-copy{color:var(--text-muted);font-size:12px}
+.footer-links{margin-top:12px;display:flex;justify-content:center;gap:20px}
+.footer-links a{color:var(--text-muted);font-size:13px;font-weight:500}
+.footer-links a:hover{color:var(--accent-light)}
+.back-top{position:fixed;bottom:24px;right:24px;z-index:100;width:44px;height:44px;border-radius:14px;border:none;cursor:pointer;background:rgba(168,85,247,0.12);color:var(--accent-light);font-size:20px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(168,85,247,0.18);opacity:0;transform:translateY(10px);transition:all 0.3s;display:flex;align-items:center;justify-content:center}
+.back-top.show{opacity:1;transform:translateY(0)}
+.back-top:hover{background:rgba(168,85,247,0.22)}
+@keyframes fadeSlideUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:600px){.container{padding:32px 16px 60px}h1{font-size:28px}.section{padding:20px 18px;border-radius:12px}.bg-glow .orb{filter:blur(80px);opacity:0.08}}
+.sticky-nav{position:fixed;top:-60px;left:0;width:100%;z-index:150;background:rgba(11,13,16,0.85);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border);transition:top 0.35s cubic-bezier(0.4,0,0.2,1)}
+.sticky-nav.show{top:0}
+.sticky-nav-inner{max-width:740px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;justify-content:space-between}
+.sticky-nav-brand{font-size:13px;font-weight:700;letter-spacing:2px;background:linear-gradient(90deg,var(--accent-light),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.sticky-nav-links{display:flex;gap:16px}
+.sticky-nav-links a{color:var(--text-muted);font-size:12px;font-weight:500;letter-spacing:0.5px;text-decoration:none;transition:color 0.2s}
+.sticky-nav-links a:hover{color:var(--accent-light);text-decoration:none}
+.progress-bar{position:fixed;top:0;left:0;height:2px;z-index:200;background:linear-gradient(90deg,var(--accent),var(--cyan));width:0%;transition:width 0.1s linear}
+</style>
+</head>
+<body>
+
+<nav class="sticky-nav" id="stickyNav">
+  <div class="sticky-nav-inner">
+    <a href="/" class="sticky-nav-brand" style="text-decoration:none">LOGICPULSE</a>
+    <div class="sticky-nav-links">
+      <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms</a>
+      <a href="https://play.google.com/store/apps/details?id=com.logicpulse.app">Play Store</a>
+      <a href="mailto:aditya@logicpulse.live">Contact</a>
+    </div>
+  </div>
+</nav>
+<div class="progress-bar" id="progressBar"></div>
+<div class="bg-glow"><div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div></div>
+<div class="particles" id="particles"></div>
+
+<div class="container">
+
+  <div class="header">
+    <a href="/" style="text-decoration:none"><div class="logo-mark" id="logoWrap"><canvas id="logoCanvas" width="160" height="160" style="width:80px;height:80px;border-radius:22px"></canvas></div></a>
+    <div class="app-name">LogicPulse</div>
+    <h1>Terms of Service</h1>
+    <p class="effective">Effective Date: March 3, 2026</p>
+    <p class="intro">Please read these terms carefully before using LogicPulse. By creating an account or using the app, you agree to be bound by these terms.</p>
+  </div>
+
+  <div class="section" data-section>
+    <span class="section-num">SECTION 01</span>
+    <h2>Acceptance of Terms</h2>
+    <p>By downloading, installing, or using LogicPulse ("the App"), you agree to these Terms of Service. If you do not agree, please do not use the App.</p>
+    <p>We may update these terms from time to time. Continued use of the App after changes constitutes acceptance of the revised terms.</p>
+  </div>
+
+  <div class="section" data-section>
+    <span class="section-num">SECTION 02</span>
+    <h2>Description of Service</h2>
+    <p>LogicPulse is an <span class="highlight">AI-powered educational tool</span> designed to help students and professionals with:</p>
+    <ul>
+      <li>Step-by-step solutions to math, physics, chemistry, and biology problems</li>
+      <li>Code debugging, review, and conversion</li>
+      <li>AI-generated quizzes and flashcards</li>
+      <li>Mock technical interviews</li>
+      <li>Voice input and image scanning for problem-solving</li>
+    </ul>
+    <div class="info-box">
+      <strong>AI Content Disclaimer</strong>
+      <p>Solutions are generated by AI (Google Gemini) and may occasionally contain errors. LogicPulse is a learning aid, not a substitute for professional academic instruction. Always verify important answers independently.</p>
+    </div>
+  </div>
+
+  <div class="section" data-section>
+    <span class="section-num">SECTION 03</span>
+    <h2>User Accounts</h2>
+    <ul>
+      <li>You must provide a valid email address to create an account.</li>
+      <li>You are responsible for maintaining the confidentiality of your password.</li>
+      <li>You must be at least <span class="highlight">13 years old</span> (or 16 in EU regions) to use the App. Users under this age require parental supervision.</li>
+      <li>You agree to provide accurate information and keep your profile up to date.</li>
+      <li>One account per person. Sharing accounts is not permitted.</li>
+    </ul>
+  </div>
+
+  <div class="section" data-section>
+    <span class="section-num">SECTION 04</span>
+    <h2>Subscriptions &amp; Payments</h2>
+    <ul>
+      <li>LogicPulse offers both <span class="highlight">free and premium</span> tiers.</li>
+      <li>Free users receive a limited number of daily AI solves, with the option to earn bonus attempts via rewarded video ads.</li>
+      <li>Premium subscriptions are managed through the <span class="highlight">Google Play Store</span> and processed by RevenueCat.</li>
+      <li>Subscription pricing is displayed in the App before purchase. All prices include applicable taxes.</li>
+      <li>Subscriptions auto-renew unless cancelled at least 24 hours before the end of the current billing period.</li>
+      <li>To cancel, go to Google Play Store &gt; Subscriptions &gt; LogicPulse &gt; Cancel.</li>
+      <li>Refunds are handled according to Google Play's refund policy.</li>
+    </ul>
+  </div>
+
+  <div class="section" data-section>
+    <span class="section-num">SECTION 05</span>
+    <h2>Acceptable Use</h2>
+    <p>You agree to use LogicPulse <span class="highlight">responsibly and ethically</span>:</p>
+    <ul>
+      <li><strong>Educational Purpose:</strong> The App is designed to help you learn and understand concepts, not to cheat on exams or assignments.</li>
+      <li><strong>No Abuse:</strong> Do not attempt to manipulate, reverse-engineer, or overload the AI service.</li>
+      <li><strong>No Harmful Content:</strong> Do not submit offensive, illegal, or harmful content through the App.</li>
+      <li><strong>No Impersonation:</strong> Do not create accounts under false identities.</li>
+    </ul>
+    <div class="info-box">
+      <strong>Academic Integrity</strong>
+      <p>LogicPulse teaches you HOW to solve problems with step-by-step explanations. We encourage you to use solutions as a learning tool, not to copy them directly into assignments. Academic integrity is your responsibility.</p>
+    </div>
+  </div>
+
+  <div class="section" data-section>
+    <span class="section-num">SECTION 06</span>
+    <h2>Intellectual Property</h2>
+    <ul>
+      <li>The LogicPulse app, brand, logo, design, and underlying code are owned by LogicPulse and protected by intellectual property laws.</li>
+      <li>AI-generated solutions are provided for your personal educational use. You may not commercially redistribute or resell them.</li>
+      <li>User-submitted content (photos, text, code) remains your property. By submitting it, you grant LogicPulse a limited license to process it for providing the service.</li>
+    </ul>
+  </div>
+
+  <div class="section" data-section>
+    <span class="section-num">SECTION 07</span>
+    <h2>Limitation of Liability</h2>
+    <p>LogicPulse is provided <span class="highlight">"as is"</span> without warranties of any kind. To the fullest extent permitted by law:</p>
+    <ul>
+      <li>We do not guarantee the accuracy, completeness, or reliability of AI-generated content.</li>
+      <li>We are not liable for any academic, professional, or personal consequences arising from the use of AI-generated solutions.</li>
+      <li>We are not responsible for any loss of data, interruption of service, or device issues caused by the App.</li>
+      <li>Our total liability shall not exceed the amount you paid for the service in the 12 months preceding the claim.</li>
+    </ul>
+  </div>
+
+  <div class="section" data-section>
+    <span class="section-num">SECTION 08</span>
+    <h2>Termination</h2>
+    <ul>
+      <li>You may delete your account at any time from Settings &gt; Delete Account.</li>
+      <li>We may suspend or terminate accounts that violate these terms, abuse the service, or engage in fraudulent activity.</li>
+      <li>Upon termination, your data will be deleted in accordance with our <a href="/privacy">Privacy Policy</a>.</li>
+    </ul>
+  </div>
+
+  <div class="section" data-section>
+    <span class="section-num">SECTION 09</span>
+    <h2>Governing Law</h2>
+    <p>These terms are governed by the laws of India. Any disputes shall be resolved through the courts of competent jurisdiction in India.</p>
+  </div>
+
+  <div class="section" data-section>
+    <span class="section-num">SECTION 10</span>
+    <h2>Contact Us</h2>
+    <p>For questions about these terms:</p>
+    <p style="margin-top:12px">
+      <strong>Aditya Kumar</strong><br>
+      <strong>Email:</strong> <a href="mailto:aditya@logicpulse.live">aditya@logicpulse.live</a><br>
+      <strong>Website:</strong> <a href="https://logicpulse.live">logicpulse.live</a>
+    </p>
+  </div>
+
+  <div class="footer">
+    <div class="footer-logo">LOGICPULSE</div>
+    <p class="footer-copy">&copy; 2026 LogicPulse. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="/privacy">Privacy Policy</a>
+      <a href="/terms">Terms of Service</a>
+      <a href="https://play.google.com/store/apps/details?id=com.logicpulse.app">Play Store</a>
+      <a href="mailto:aditya@logicpulse.live">Contact</a>
+    </div>
+  </div>
+
+</div>
+
+<button class="back-top" id="backTop" aria-label="Back to top">↑</button>
+
+<script>
+(function(){
+  var img=new Image();
+  img.onload=function(){
+    var logo=document.getElementById('logoCanvas');
+    if(logo){var lctx=logo.getContext('2d');lctx.clearRect(0,0,160,160);lctx.drawImage(img,0,0,160,160);}
+    var fc=document.createElement('canvas');fc.width=32;fc.height=32;
+    var fctx=fc.getContext('2d');fctx.drawImage(img,0,0,32,32);
+    var link=document.querySelector("link[rel='icon']");
+    if(link){link.href=fc.toDataURL('image/png');}
+  };
+  img.onerror=function(){var w=document.getElementById('logoWrap');if(w){w.style.fontSize='36px';w.style.lineHeight='80px';w.innerHTML='⚡';}};
+  img.src='icon.png';
+})();
+(function(){
+  var c=document.getElementById('particles');
+  var colors=['#A855F7','#C084FC','#7C3AED','#9333EA','#40E0FF','#A78BFA'];
+  for(var i=0;i<70;i++){
+    var p=document.createElement('div');p.className='particle';
+    p.style.left=Math.random()*100+'%';p.style.top=Math.random()*100+100+'%';
+    p.style.animationDuration=(12+Math.random()*28)+'s';p.style.animationDelay=Math.random()*25+'s';
+    var size=1+Math.random()*2.5;p.style.width=size+'px';p.style.height=size+'px';
+    p.style.background=colors[Math.floor(Math.random()*colors.length)];c.appendChild(p);
+  }
+})();
+var sections=document.querySelectorAll('[data-section]');
+var observer=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible')});},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+sections.forEach(function(s){observer.observe(s)});
+window.addEventListener('scroll',function(){var h=document.documentElement;var pct=(h.scrollTop/(h.scrollHeight-h.clientHeight))*100;document.getElementById('progressBar').style.width=pct+'%';document.getElementById('backTop').classList.toggle('show',h.scrollTop>400);document.getElementById('stickyNav').classList.toggle('show',h.scrollTop>300);});
+document.getElementById('backTop').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+</script>
+</body>
+</html>
