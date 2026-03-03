@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Privacy Policy | LogicPulse</title>
 <meta name="description" content="Privacy Policy for LogicPulse - AI-powered STEM tutor for students and professionals.">
+<link rel="icon" type="image/png" href="icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -12,7 +13,8 @@
 :root{
   --bg:#0B0D10;--bg-card:rgba(255,255,255,0.03);--border:rgba(255,255,255,0.06);
   --text:#E0E4EC;--text-sec:#9CA3AF;--text-muted:#6B7280;
-  --accent:#40E0FF;--accent-dark:#1DB8D6;--purple:#A855F7;
+  --accent:#A855F7;--accent-light:#C084FC;--accent-dark:#7C3AED;
+  --cyan:#40E0FF;
 }
 html{scroll-behavior:smooth}
 body{
@@ -25,7 +27,7 @@ body{
 .bg-glow{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;overflow:hidden}
 .bg-glow .orb{position:absolute;border-radius:50%;filter:blur(120px);opacity:0.12;animation:orbFloat 20s ease-in-out infinite}
 .bg-glow .orb-1{width:500px;height:500px;background:var(--accent);top:-10%;left:-10%;animation-delay:0s}
-.bg-glow .orb-2{width:400px;height:400px;background:var(--purple);bottom:-5%;right:-10%;animation-delay:-7s}
+.bg-glow .orb-2{width:400px;height:400px;background:var(--cyan);bottom:-5%;right:-10%;animation-delay:-7s}
 .bg-glow .orb-3{width:300px;height:300px;background:var(--accent-dark);top:40%;right:20%;animation-delay:-14s}
 @keyframes orbFloat{
   0%,100%{transform:translate(0,0) scale(1)}
@@ -35,7 +37,7 @@ body{
 
 /* Particles */
 .particles{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0}
-.particle{position:absolute;width:2px;height:2px;background:var(--accent);border-radius:50%;opacity:0;animation:particleDrift linear infinite}
+.particle{position:absolute;width:2px;height:2px;border-radius:50%;opacity:0;animation:particleDrift linear infinite}
 @keyframes particleDrift{
   0%{opacity:0;transform:translateY(0)}
   10%{opacity:0.6}
@@ -49,16 +51,20 @@ body{
 .header{text-align:center;margin-bottom:48px;animation:fadeSlideUp 0.8s ease-out}
 .logo-mark{
   display:inline-flex;align-items:center;justify-content:center;
-  width:64px;height:64px;border-radius:20px;
-  background:linear-gradient(135deg,var(--accent),var(--purple));
-  margin-bottom:20px;font-size:28px;
-  box-shadow:0 0 40px rgba(64,224,255,0.2),0 0 80px rgba(168,85,247,0.1);
+  width:80px;height:80px;border-radius:22px;
+  background:linear-gradient(135deg,rgba(168,85,247,0.15),rgba(124,58,237,0.1));
+  margin-bottom:20px;overflow:hidden;
+  box-shadow:0 0 40px rgba(168,85,247,0.25),0 0 80px rgba(124,58,237,0.1);
   animation:breathe 3s ease-in-out infinite;
 }
-@keyframes breathe{0%,100%{transform:scale(1);box-shadow:0 0 40px rgba(64,224,255,0.2)}50%{transform:scale(1.05);box-shadow:0 0 60px rgba(64,224,255,0.3)}}
+.logo-mark img{width:100%;height:100%;object-fit:cover;border-radius:22px}
+@keyframes breathe{
+  0%,100%{transform:scale(1);box-shadow:0 0 40px rgba(168,85,247,0.25)}
+  50%{transform:scale(1.05);box-shadow:0 0 60px rgba(168,85,247,0.35)}
+}
 .app-name{
   font-size:13px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
-  background:linear-gradient(90deg,var(--accent),var(--purple));
+  background:linear-gradient(90deg,var(--accent-light),var(--cyan));
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;
   background-clip:text;margin-bottom:8px;
 }
@@ -75,10 +81,10 @@ h1{font-size:36px;font-weight:800;color:#fff;letter-spacing:-0.5px;margin-bottom
   transition:opacity 0.6s ease,transform 0.6s ease,border-color 0.3s;
 }
 .section.visible{opacity:1;transform:translateY(0)}
-.section:hover{border-color:rgba(64,224,255,0.15)}
+.section:hover{border-color:rgba(168,85,247,0.18)}
 .section-num{
   display:inline-block;font-size:11px;font-weight:700;letter-spacing:1.5px;
-  color:var(--accent);background:rgba(64,224,255,0.08);
+  color:var(--accent-light);background:rgba(168,85,247,0.1);
   padding:4px 10px;border-radius:20px;margin-bottom:12px;
 }
 h2{font-size:19px;font-weight:700;color:#fff;margin-bottom:12px}
@@ -89,15 +95,15 @@ li strong{color:var(--text)}
 
 /* Info box */
 .info-box{
-  background:rgba(64,224,255,0.04);border:1px solid rgba(64,224,255,0.12);
+  background:rgba(168,85,247,0.05);border:1px solid rgba(168,85,247,0.15);
   border-radius:12px;padding:16px 20px;margin:16px 0;
 }
-.info-box strong{color:var(--accent);font-size:14px}
+.info-box strong{color:var(--accent-light);font-size:14px}
 .info-box p{margin-top:8px;margin-bottom:0;font-size:14px}
 
 /* Highlight */
 .highlight{color:#fff;font-weight:600}
-a{color:var(--accent);text-decoration:none;transition:opacity 0.2s}
+a{color:var(--accent-light);text-decoration:none;transition:opacity 0.2s}
 a:hover{opacity:0.8;text-decoration:underline}
 
 /* Footer */
@@ -107,27 +113,27 @@ a:hover{opacity:0.8;text-decoration:underline}
 }
 .footer-logo{
   font-size:13px;font-weight:700;letter-spacing:2px;
-  background:linear-gradient(90deg,var(--accent),var(--purple));
+  background:linear-gradient(90deg,var(--accent-light),var(--cyan));
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;
   background-clip:text;margin-bottom:8px;
 }
 .footer-copy{color:var(--text-muted);font-size:12px}
 .footer-links{margin-top:12px;display:flex;justify-content:center;gap:20px}
 .footer-links a{color:var(--text-muted);font-size:13px;font-weight:500}
-.footer-links a:hover{color:var(--accent)}
+.footer-links a:hover{color:var(--accent-light)}
 
 /* Back to top */
 .back-top{
   position:fixed;bottom:24px;right:24px;z-index:100;
   width:44px;height:44px;border-radius:14px;border:none;cursor:pointer;
-  background:rgba(64,224,255,0.12);color:var(--accent);font-size:20px;
+  background:rgba(168,85,247,0.12);color:var(--accent-light);font-size:20px;
   backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
-  border:1px solid rgba(64,224,255,0.15);
+  border:1px solid rgba(168,85,247,0.18);
   opacity:0;transform:translateY(10px);transition:all 0.3s;
   display:flex;align-items:center;justify-content:center;
 }
 .back-top.show{opacity:1;transform:translateY(0)}
-.back-top:hover{background:rgba(64,224,255,0.2)}
+.back-top:hover{background:rgba(168,85,247,0.22)}
 
 /* Animations */
 @keyframes fadeSlideUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
@@ -143,7 +149,7 @@ a:hover{opacity:0.8;text-decoration:underline}
 /* Scroll progress */
 .progress-bar{
   position:fixed;top:0;left:0;height:2px;z-index:200;
-  background:linear-gradient(90deg,var(--accent),var(--purple));
+  background:linear-gradient(90deg,var(--accent),var(--cyan));
   width:0%;transition:width 0.1s linear;
 }
 </style>
@@ -163,7 +169,7 @@ a:hover{opacity:0.8;text-decoration:underline}
 <div class="container">
 
   <div class="header">
-    <div class="logo-mark">⚡</div>
+    <div class="logo-mark"><img src="icon.png" alt="LogicPulse"></div>
     <div class="app-name">LogicPulse</div>
     <h1>Privacy Policy</h1>
     <p class="effective">Effective Date: March 3, 2026</p>
@@ -289,9 +295,10 @@ a:hover{opacity:0.8;text-decoration:underline}
 <button class="back-top" id="backTop" aria-label="Back to top">↑</button>
 
 <script>
-// Particles
+// Particles (mix of purple and cyan)
 (function(){
   const c=document.getElementById('particles');
+  const colors=['#A855F7','#C084FC','#7C3AED','#40E0FF'];
   for(let i=0;i<25;i++){
     const p=document.createElement('div');
     p.className='particle';
@@ -300,6 +307,7 @@ a:hover{opacity:0.8;text-decoration:underline}
     p.style.animationDuration=(15+Math.random()*25)+'s';
     p.style.animationDelay=Math.random()*20+'s';
     p.style.width=p.style.height=(1+Math.random()*2)+'px';
+    p.style.background=colors[Math.floor(Math.random()*colors.length)];
     c.appendChild(p);
   }
 })();
